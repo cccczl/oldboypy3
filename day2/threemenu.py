@@ -35,4 +35,11 @@ while True:
         while True:
             for j in  company_dict[choice]:
                 print("\t",j)
-            
+            while True:
+                choice_2 = input("选择输入2:")
+                for g in company_dict[choice][choice_2]:
+                    print("\t""\t",g)
+                while True:
+                    choice_3 = input("选择输入3:")
+                    for h in company_dict[choice][choice_2][choice_3]:
+                        print("\t""\t",h)
