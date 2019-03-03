@@ -32,7 +32,7 @@ dict["海南"]['屯昌'] = "鬼地方"
 #print(dict['屯昌'])
 print(dict.values())
 dict.setdefault("台湾",{"台北":["仙桃"]})
-'''
+
 p = dict1.get("贵州").get("贵阳")
 print(dict1)
 print(dict1["贵州"]["贵阳"][0])
@@ -46,3 +46,5 @@ for i in dict1:  #推荐使用这种方法查
 
 for k,v in dict1.items(): #这种方法会把字典转成list
     print(k,v)
+'''
+print(dict1.get("贵阳"))
