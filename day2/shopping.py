@@ -10,26 +10,26 @@ for i in commodity_list:
     print(commodity_list.index(i), i)
 while True:
     commodity_select = input("请选择你要购买的商品：")
-    
+
     if commodity_select.isdigit() and int(commodity_select) >= len(commodity_list):
         print("没有这件商品")
-        
+
     elif commodity_select == "q":
         print(shop_list)
-        print("结账完成，你的余额还剩%s。" % salary)
+        print(f"结账完成，你的余额还剩{salary}。")
         break
-        
+
     else:
         name, jiage = commodity_list[int(commodity_select)]
         if int(salary) < jiage:
             print("钱都不够买个毛线！")
-        
-        
+
+
         else:
             shop_list.append(commodity_list[int(commodity_select)])
             salary = int(salary) - jiage
-            print("你的余额还剩%s。" % salary)
-    
+            print(f"你的余额还剩{salary}。")
+                
 
 
 '''

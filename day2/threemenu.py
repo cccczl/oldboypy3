@@ -53,6 +53,6 @@ while True:
                     print("\t""\t", h)
                 print("这是最后一层菜单！")
 
-            elif choice_3 == "b" or choice_3 == "":
+            elif choice_3 in ["b", ""]:
                 break
 

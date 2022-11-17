@@ -10,17 +10,14 @@ count = 0
 flag = 1
 lock_user = []
 
-f1 = open(lock, 'r')
-lock_file = f1.readlines()
-f1.close()
+with open(lock, 'r') as f1:
+    lock_file = f1.readlines()
 for i in lock_file:
     i = i.strip('\n')
     lock_user.append(i)
 
-f2 = open(account, 'r')
-account_file = f2.readlines()
-f2.close()
-
+with open(account, 'r') as f2:
+    account_file = f2.readlines()
 while True:
     name = input("input your name:")
     passwd = input("input your password:")
@@ -31,16 +28,14 @@ while True:
         count += 1
         for i in account_file:
             n1, p1 = i.strip().split()
-            if name == n1 and passwd == p1:
-                print("welcome login!!")
-                flag = True
-            else:
+            if name != n1 or passwd != p1:
                 continue
+            print("welcome login!!")
+            flag = True
     if flag is True:
         break
-    else:
-        if count > 2:
-            print("错误三次")
-            with open(lock, 'a') as f:
-                f.write("\n" + name)
-                break
+    if count > 2:
+        print("错误三次")
+        with open(lock, 'a') as f:
+            f.write("\n" + name)
+            break
