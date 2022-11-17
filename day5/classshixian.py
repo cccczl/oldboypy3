@@ -8,7 +8,7 @@ class shuiguo():
 
     def shelf_life(self):
 
-        print(self.name.title() + " this is 7 day")
+        print(f"{self.name.title()} this is 7 day")
 
     def shuiguo_print(self):
 

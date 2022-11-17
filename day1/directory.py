@@ -12,13 +12,12 @@ print(os.getcwd())
 while True:
     current_directory = os.getcwd()
     print("============================")
-    print("上方为当前所在的目录%s" % current_directory)
+    print(f"上方为当前所在的目录{current_directory}")
     chdir_directory = input("请在这里输入你想要到达的目录：")
-    
 
-    if chdir_directory == "q" or chdir_directory =="Q":
+
+    if chdir_directory in ["q", "Q"]:
         break
-    else:
-        movie_dir = os.chdir(chdir_directory)
-        list_dir = os.listdir(chdir_directory)
-        print(list_dir)
+    movie_dir = os.chdir(chdir_directory)
+    list_dir = os.listdir(chdir_directory)
+    print(list_dir)
